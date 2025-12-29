@@ -8,3 +8,13 @@ datasource db {
 }
 
 // your models go here
+model Movies{
+  id Int @id @default(autoincrement())
+  movieTitle String @db.VarChar(250)
+  movieGener String @db.VarChar(250)
+  movieReleaseDate DateTime?
+  movieDirector String @db.VarChar(250)
+
+@@map("movies")
+@@unique([movieTitle])
+}
