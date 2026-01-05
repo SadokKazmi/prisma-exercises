@@ -8,13 +8,36 @@ datasource db {
 }
 
 // your models go here
-model Movies{
+model Movie{
   id Int @id @default(autoincrement())
   movieTitle String @db.VarChar(250)
-  movieGener String @db.VarChar(250)
-  movieReleaseDate DateTime?
-  movieDirector String @db.VarChar(250)
+  //  movieGener Genre[] @relation("MoviesGenres")
+   movieGenre Genre[] //many to many
+  
+  directorId Int
+  director Director @relation(fields: [directorId],references: [id])
 
-@@map("movies")
+  movieReleaseDate Int
+
+@@map("movie")
 @@unique([movieTitle])
 }
+
+model Genre{
+  id Int @id @default(autoincrement())
+  genreTitle String @unique
+  movies Movie[] //many to many
+
+@@map("genre")
+}
+
+model Director{
+  id Int @id @default(autoincrement())
+  movieDirector String @unique
+  movies Movie[] 
+
+   @@map("director")
+}
+
+
+

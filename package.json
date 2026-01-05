@@ -12,8 +12,10 @@
   "devDependencies": {
     "@types/node": "^24.10.4",
     "@types/pg": "^8.16.0",
+    "@types/prompt-sync": "^4.2.3",
     "dotenv": "^17.2.3",
     "prisma": "^7.2.0",
+    "ts-node": "^10.9.2",
     "tsx": "^4.20.6",
     "typescript": "^5.9.3"
   },
@@ -21,6 +23,7 @@
     "@inquirer/prompts": "^7.9.0",
     "@prisma/adapter-pg": "^7.2.0",
     "@prisma/client": "^7.2.0",
-    "pg": "^8.16.3"
+    "pg": "^8.16.3",
+    "prompt-sync": "^4.2.0"
   }
 }
